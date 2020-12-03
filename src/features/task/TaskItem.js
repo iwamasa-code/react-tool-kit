@@ -13,7 +13,7 @@ export const TaskItem = ({ task }) => {
         defaultChecked={task.completed}
       />
       <span>{task.title}</span>
-      <button onClick={() => dispatch(deleteTask(task))}>DELETE</button>
+      <button onClick={() => dispatch(deleteTask(task))}>削除する</button>
     </div>
   );
 };
