@@ -24,7 +24,7 @@ export const TaskInput = () => {
           onChange={handleTitleChange}
           placeholder="Please type in"
         />
-        <button>New</button>
+        <button>追加</button>
       </form>
     </div>
   );

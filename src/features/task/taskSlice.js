@@ -7,17 +7,17 @@ export const taskSlice = createSlice({
     tasks: [
       {
         id: 1,
-        title: "TASK A",
+        title: "料理をする",
         completed: false,
       },
       {
         id: 2,
-        title: "TASK B",
-        completed: true,
+        title: "掃除をする",
+        completed: false,
       },
       {
         id: 3,
-        title: "TASK C",
+        title: "買い物にいく",
         completed: false,
       },
     ],
