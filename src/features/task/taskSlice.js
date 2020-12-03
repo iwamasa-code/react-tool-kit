@@ -22,8 +22,10 @@ export const taskSlice = createSlice({
       },
     ],
   },
+
   reducers: {
     newTask: (state, action) => {
+      //4番目のタスクが作られたら＋1をして新しくTaskを追加
       state.idCount++;
       const newItem = {
         id: state.idCount,
@@ -32,6 +34,8 @@ export const taskSlice = createSlice({
       };
       state.tasks = [newItem, ...state.tasks];
     },
+
+    //completedをtoggleするaction
     completeTask: (state, action) => {
       const task = state.tasks.find((t) => t.id === action.payload.id);
       if (task) {
@@ -39,13 +43,14 @@ export const taskSlice = createSlice({
       }
     },
     deleteTask: (state, action) => {
-      state.tasks = state.tasks.fillter((t) => t.id !== action.payload.id);
+      state.tasks = state.tasks.filter((t) => t.id !== action.payload.id);
     },
   },
 });
 
 export const { newTask, completeTask, deleteTask } = taskSlice.actions;
 
+//useSelectorに関係する。Storeの中のStateを参照する為の処理
 export const selectTasks = (state) => state.task.tasks;
 
 export default taskSlice.reducer;
